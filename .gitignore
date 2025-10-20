@@ -1,0 +1,48 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+.env.*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files (large datasets)
+data/
+*.csv
+*.tsv
+*.h5
+*.pkl
+*.npz
+
+# Logs and outputs
+logs/
+*.log
+outputs/
+*.hdf5
+
+# Docker
+*.docker
+docker-compose.override.yml
+
+# IDE / Editor files
+.vscode/
+*.idea/
+*.iml
+.DS_Store
+
+# TensorFlow / PyTorch
+*.ckpt
+*.pt
+*.pth
+*.tfevents.*
+
+# Ignore model files (if you don't want to track)
+models/
+
+# Paste the above content here
