@@ -18,8 +18,8 @@ from dataclasses import dataclass
 # Import data transformation modules
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
 
-# # Import model training modules
-# from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
+ # Import model training modules
+from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
 
 # # ---------------------------------------------------------------
 # Configuration for Data Ingestion: stores file paths
@@ -90,6 +90,6 @@ if __name__ == "__main__":
     data_transformation = DataTransformation()
     train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
 
-    # # Train the model using the transformed data
-    # modeltrainer = ModelTrainer()
-    # print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
+    # Train the model using the transformed data
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
