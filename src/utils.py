@@ -8,7 +8,7 @@ import pandas as pd  # data manipulation
 import dill  # (alternative to pickle for more complex objects, though not used here)
 import pickle  # to serialize (save) and deserialize (load) Python objects
 from sklearn.metrics import r2_score  # to evaluate regression model performance
-#from sklearn.model_selection import GridSearchCV  # for hyperparameter tuning
+from sklearn.model_selection import GridSearchCV  # for hyperparameter tuning
 
 # Custom exception class from your project
 from src.exception import CustomException
@@ -46,7 +46,7 @@ def save_object(file_path, obj):
 # ===============================
 # Function to evaluate multiple models with hyperparameter tuning
 # ===============================
-def evaluate_models(X_train, y_train, X_test, y_test, models):
+def evaluate_models(X_train, y_train, X_test, y_test, models,param):
     """
     Trains and evaluates multiple models using GridSearchCV for hyperparameter tuning.
 
@@ -68,14 +68,14 @@ def evaluate_models(X_train, y_train, X_test, y_test, models):
         # Loop through each model
         for i in range(len(list(models))):
             model = list(models.values())[i]  # get model instance
-            # para = param[list(models.keys())[i]]  # get corresponding hyperparameters
+            para = param[list(models.keys())[i]]  # get corresponding hyperparameters
 
-            # Perform Grid Search with 3-fold cross-validation
-            # gs = GridSearchCV(model, para, cv=3)
-            # gs.fit(X_train, y_train)
+            #Perform Grid Search with 3-fold cross-validation
+            gs = GridSearchCV(model, para, cv=3)
+            gs.fit(X_train, y_train)
 
-            # Set the model's best parameters and retrain on full training data
-            # model.set_params(**gs.best_params_)
+            #Set the model's best parameters and retrain on full training data
+            model.set_params(**gs.best_params_)
             model.fit(X_train, y_train)
 
             # Predict on training and test sets
