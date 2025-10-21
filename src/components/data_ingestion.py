@@ -15,8 +15,8 @@ from sklearn.model_selection import train_test_split  # For splitting dataset in
 # To create configuration classes easily
 from dataclasses import dataclass  
 
-# # Import data transformation modules
-# from src.components.data_transformation import DataTransformation, DataTransformationConfig
+# Import data transformation modules
+from src.components.data_transformation import DataTransformation, DataTransformationConfig
 
 # # Import model training modules
 # from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
@@ -86,9 +86,9 @@ if __name__ == "__main__":
     # Perform data ingestion
     train_data, test_data = obj.initiate_data_ingestion()
 
-    # # Perform data transformation
-    # data_transformation = DataTransformation()
-    # train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
+     # Perform data transformation
+    data_transformation = DataTransformation()
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
 
     # # Train the model using the transformed data
     # modeltrainer = ModelTrainer()
