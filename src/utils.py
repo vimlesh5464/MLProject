@@ -96,25 +96,25 @@ def evaluate_models(X_train, y_train, X_test, y_test, models,param):
         raise CustomException(e, sys)
     
 
-# # ===============================
-# # Function to load a Python object from a file
-# # ===============================
-# def load_object(file_path):
-#     """
-#     Loads a Python object from the given file path using pickle.
+# ===============================
+# Function to load a Python object from a file
+# ===============================
+def load_object(file_path):
+    """
+    Loads a Python object from the given file path using pickle.
 
-#     Args:
-#         file_path (str): Path of the saved object
+    Args:
+        file_path (str): Path of the saved object
 
-#     Returns:
-#         Loaded Python object
+    Returns:
+        Loaded Python object
 
-#     Raises:
-#         CustomException: if loading fails
-#     """
-#     try:
-#         with open(file_path, "rb") as file_obj:
-#             return pickle.load(file_obj)
+    Raises:
+        CustomException: if loading fails
+    """
+    try:
+        with open(file_path, "rb") as file_obj:
+            return pickle.load(file_obj)
 
-#     except Exception as e:
-#         raise CustomException(e, sys)
+    except Exception as e:
+        raise CustomException(e, sys)
